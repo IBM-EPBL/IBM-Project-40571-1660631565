@@ -1,0 +1,35 @@
+import pandas as pd
+ds=pd.read_excel(r"/content/Crude Oil Prices Daily.xlsx") 
+ds.shape
+(8223, 2)
+ds.head()
+Date	Closing Value
+0	1986-01-02	25.56
+1	1986-01-03	26.00
+2	1986-01-06	26.53
+3	1986-01-07	25.85
+4	1986-01-08	25.87
+ds.isnull().sum()
+Date             0
+Closing Value    7
+dtype: int64
+hd=ds.dropna()
+print(hd)
+           Date  Closing Value
+0    1986-01-02          25.56
+1    1986-01-03          26.00
+2    1986-01-06          26.53
+3    1986-01-07          25.85
+4    1986-01-08          25.87
+...         ...            ...
+8217 2018-07-02          73.89
+8218 2018-07-03          74.19
+8220 2018-07-05          73.05
+8221 2018-07-06          73.78
+8222 2018-07-09          73.93
+
+[8216 rows x 2 columns]
+hd.isnull().sum()
+Date             0
+Closing Value    0
+dtype: int64
